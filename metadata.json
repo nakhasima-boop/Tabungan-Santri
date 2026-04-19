@@ -1,0 +1,8 @@
+{
+  "name": "Tabungan Santri",
+  "description": "Sistem Manajemen Tabungan Asrama terintegrasi dengan Google Sheets.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": []
+}
