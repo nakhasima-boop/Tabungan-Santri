@@ -58,7 +58,7 @@ export const Sidebar = () => {
             className={({ isActive }) => cn(
               "flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-semibold transition-all mb-1",
               isActive 
-                ? "bg-sky-50 text-sky-700" 
+                ? "bg-emerald-50 text-emerald-700" 
                 : "text-slate-500 hover:text-slate-800 hover:bg-slate-50"
             )}
           >

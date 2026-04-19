@@ -85,7 +85,7 @@ export default function LoginPage() {
             onClick={() => { setRole('admin'); setError(''); }}
             className={cn(
               "flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg text-xs font-bold transition-all uppercase tracking-widest",
-              role === 'admin' ? "bg-white text-sky-600 shadow-sm" : "text-slate-400 hover:text-slate-600"
+              role === 'admin' ? "bg-white text-emerald-600 shadow-sm" : "text-slate-400 hover:text-slate-600"
             )}
           >
             <ShieldCheck size={14} />
@@ -95,7 +95,7 @@ export default function LoginPage() {
             onClick={() => { setRole('siswa'); setError(''); }}
             className={cn(
               "flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg text-xs font-bold transition-all uppercase tracking-widest",
-              role === 'siswa' ? "bg-white text-sky-600 shadow-sm" : "text-slate-400 hover:text-slate-600"
+              role === 'siswa' ? "bg-white text-emerald-600 shadow-sm" : "text-slate-400 hover:text-slate-600"
             )}
           >
             <GraduationCap size={14} />

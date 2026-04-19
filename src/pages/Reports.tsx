@@ -152,14 +152,14 @@ export default function ReportsPage() {
                <Card className="bg-white border-slate-100 rounded-[2.5rem] overflow-hidden print:border-none shadow-sm">
                 <div className="p-10 border-b border-slate-50 bg-slate-50/30 flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
                    <div className="flex items-center gap-6">
-                      <div className="w-20 h-20 bg-sky-600 rounded-3xl flex items-center justify-center text-white shadow-xl shadow-sky-200 relative overflow-hidden">
+                      <div className="w-20 h-20 bg-emerald-600 rounded-3xl flex items-center justify-center text-white shadow-xl shadow-emerald-200 relative overflow-hidden">
                          <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
                          <Users size={40} className="relative z-10" />
                       </div>
                       <div className="space-y-1">
                          <h2 className="text-3xl font-display font-bold text-slate-900 tracking-tight leading-none">{selectedStudent.nama}</h2>
                          <div className="flex items-center gap-2 mt-3">
-                            <span className="text-[10px] font-bold text-sky-600 bg-sky-50 px-3 py-1 rounded-lg uppercase tracking-wider border border-sky-100">NIS: {selectedStudent.nis}</span>
+                            <span className="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-3 py-1 rounded-lg uppercase tracking-wider border border-emerald-100">NIS: {selectedStudent.nis}</span>
                             <span className="text-[10px] font-bold text-indigo-600 bg-indigo-50 px-3 py-1 rounded-lg uppercase tracking-wider border border-indigo-100">Kelas: {selectedStudent.kelas}</span>
                          </div>
                       </div>

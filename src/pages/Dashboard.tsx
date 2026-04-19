@@ -53,8 +53,8 @@ export default function Dashboard() {
         setTransactions(tx.sort((a: any, b: any) => new Date(b.tanggal).getTime() - new Date(a.tanggal).getTime()).slice(0, 5));
       } else {
         const [allTx, students] = await Promise.all([getTransaksi(), getSiswa()]);
-        const mySiswa = students.find((s: any) => s.id_siswa === user.id_siswa);
-        const myTx = allTx.filter((t: any) => t.id_siswa === user.id_siswa)
+        const mySiswa = students.find((s: any) => String(s.id_siswa) === String(user.id_siswa));
+        const myTx = allTx.filter((t: any) => String(t.id_siswa) === String(user.id_siswa))
                           .sort((a: any, b: any) => new Date(b.tanggal).getTime() - new Date(a.tanggal).getTime());
         setStudentData(mySiswa);
         setTransactions(myTx);
@@ -88,8 +88,8 @@ export default function Dashboard() {
         icon: Wallet, 
         prefix: 'Rp ', 
         desc: 'Dana terkumpul saat ini',
-        color: 'bg-sky-500',
-        lightColor: 'bg-sky-50 text-sky-600'
+        color: 'bg-emerald-500',
+        lightColor: 'bg-emerald-50 text-emerald-600'
       },
       { 
         label: 'Santri Terdaftar', 
@@ -120,8 +120,8 @@ export default function Dashboard() {
             <div className="relative z-10 flex flex-col md:flex-row justify-between items-center gap-8">
               <div className="space-y-3">
                 <div className="flex items-center gap-2 px-3 py-1 bg-white/10 w-fit rounded-full backdrop-blur-sm border border-white/10">
-                  <Sparkles size={12} className="text-sky-300" />
-                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-sky-200">Management Panel v2.5</span>
+                  <Sparkles size={12} className="text-emerald-300" />
+                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-200">Management Panel v2.5</span>
                 </div>
                 <h1 className="text-4xl md:text-5xl font-display font-bold tracking-tight">Selamat Datang, Admin</h1>
                 <p className="text-slate-400 max-w-lg text-sm leading-relaxed">Kelola tabungan santri dengan presisi tinggi. Seluruh data sudah terenkripsi dan dicadangkan secara real-time ke sistem awan.</p>
@@ -175,7 +175,7 @@ export default function Dashboard() {
                       onClick={() => setChartView('pekan')}
                       className={cn(
                         "px-4 py-2 text-[10px] font-bold uppercase rounded-[10px] transition-all",
-                        chartView === 'pekan' ? "bg-white text-sky-600 shadow-sm ring-1 ring-slate-900/5" : "text-slate-400 hover:text-slate-600"
+                        chartView === 'pekan' ? "bg-white text-emerald-600 shadow-sm ring-1 ring-slate-900/5" : "text-slate-400 hover:text-slate-600"
                       )}
                     >
                       Pekan
@@ -184,7 +184,7 @@ export default function Dashboard() {
                       onClick={() => setChartView('bulan')}
                       className={cn(
                         "px-4 py-2 text-[10px] font-bold uppercase rounded-[10px] transition-all",
-                        chartView === 'bulan' ? "bg-white text-sky-600 shadow-sm ring-1 ring-slate-900/5" : "text-slate-400 hover:text-slate-600"
+                        chartView === 'bulan' ? "bg-white text-emerald-600 shadow-sm ring-1 ring-slate-900/5" : "text-slate-400 hover:text-slate-600"
                       )}
                     >
                       Bulan
@@ -206,8 +206,8 @@ export default function Dashboard() {
                     ]}>
                       <defs>
                         <linearGradient id="colorVal" x1="0" y1="0" x2="0" y2="1">
-                          <stop offset="5%" stopColor="#0ea5e9" stopOpacity={0.15}/>
-                          <stop offset="95%" stopColor="#0ea5e9" stopOpacity={0.01}/>
+                          <stop offset="5%" stopColor="#10b981" stopOpacity={0.15}/>
+                          <stop offset="95%" stopColor="#10b981" stopOpacity={0.01}/>
                         </linearGradient>
                       </defs>
                       <CartesianGrid strokeDasharray="4 4" vertical={false} stroke="#f8fafc" />
@@ -226,11 +226,11 @@ export default function Dashboard() {
                       <Area 
                         type="monotone" 
                         dataKey="val" 
-                        stroke="#0ea5e9" 
+                        stroke="#10b981" 
                         fillOpacity={1} 
                         fill="url(#colorVal)" 
                         strokeWidth={4} 
-                        activeDot={{ r: 6, fill: '#fff', stroke: '#0ea5e9', strokeWidth: 3 }}
+                        activeDot={{ r: 6, fill: '#fff', stroke: '#10b981', strokeWidth: 3 }}
                         animationDuration={2000}
                         animationEasing="ease-in-out"
                       />
@@ -308,7 +308,7 @@ export default function Dashboard() {
   return (
     <Layout>
       <div className="space-y-10">
-        <div className="relative p-10 rounded-[2.5rem] bg-gradient-to-br from-sky-600 to-sky-800 overflow-hidden text-white shadow-2xl">
+        <div className="relative p-10 rounded-[2.5rem] bg-gradient-to-br from-emerald-600 to-emerald-800 overflow-hidden text-white shadow-2xl">
            <div className="gradient-blur opacity-30 bg-white" />
            <div className="relative z-10 flex flex-col md:flex-row justify-between items-center gap-8">
               <div className="flex items-center gap-6">
@@ -319,13 +319,13 @@ export default function Dashboard() {
                     <h1 className="text-3xl font-display font-bold leading-none tracking-tight">Halo, {studentData?.nama}</h1>
                     <div className="flex items-center gap-2">
                        <span className="text-[10px] font-bold uppercase tracking-[0.2em] bg-white/20 px-2 py-0.5 rounded-md backdrop-blur-sm">Santri Aktif</span>
-                       <span className="text-sky-100 text-[10px] font-bold uppercase tracking-widest">• Kelas {studentData?.kelas}</span>
+                       <span className="text-emerald-100 text-[10px] font-bold uppercase tracking-widest">• Kelas {studentData?.kelas}</span>
                     </div>
                  </div>
               </div>
               <Button 
                 onClick={() => setShowMemberCard(true)} 
-                className="gap-3 bg-white text-sky-700 hover:bg-sky-50 rounded-2xl px-8 py-6 h-auto font-bold uppercase tracking-widest text-xs shadow-xl active:scale-95 transition-all"
+                className="gap-3 bg-white text-emerald-700 hover:bg-emerald-50 rounded-2xl px-8 py-6 h-auto font-bold uppercase tracking-widest text-xs shadow-xl active:scale-95 transition-all"
               >
                  <QrCode size={18} />
                  Tampilkan Kartu Digital
@@ -343,14 +343,14 @@ export default function Dashboard() {
                   <span className="text-xs font-bold text-slate-400 uppercase tracking-[0.2em] block">Saldo Tabungan Saat Ini</span>
                </div>
                <div className="text-5xl font-display font-bold tracking-tight text-white mb-8">
-                  <span className="text-sky-500 mr-2 text-2xl font-sans">Rp</span>
+                  <span className="text-emerald-500 mr-2 text-2xl font-sans">Rp</span>
                   {Number(studentData?.saldo || 0).toLocaleString('id-ID')}
                </div>
                <div className="flex items-center gap-4 pt-8 border-t border-white/5">
                   <div className="flex -space-x-2">
-                     <div className="w-6 h-6 rounded-full border-2 border-slate-900 bg-sky-500" />
                      <div className="w-6 h-6 rounded-full border-2 border-slate-900 bg-emerald-500" />
                      <div className="w-6 h-6 rounded-full border-2 border-slate-900 bg-indigo-500" />
+                     <div className="w-6 h-6 rounded-full border-2 border-slate-900 bg-emerald-400" />
                   </div>
                   <span className="text-[10px] text-slate-400 font-bold uppercase tracking-[0.1em]">Tabungan Masa Depan Aman</span>
                </div>
@@ -385,12 +385,12 @@ export default function Dashboard() {
         <div className="space-y-6">
             <div className="flex items-center justify-between px-2">
                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-white border border-slate-100 rounded-xl flex items-center justify-center text-sky-600 shadow-sm">
+                  <div className="w-10 h-10 bg-white border border-slate-100 rounded-xl flex items-center justify-center text-emerald-600 shadow-sm">
                     <Activity size={20} />
                   </div>
                   <h3 className="font-display font-bold text-slate-900 text-xl">Arus Kas Pribadi</h3>
                </div>
-               <button className="text-[10px] font-bold text-sky-600 uppercase tracking-widest hover:underline">Unduh Riwayat</button>
+               <button className="text-[10px] font-bold text-emerald-600 uppercase tracking-widest hover:underline">Unduh Riwayat</button>
             </div>
             
             <Card className="overflow-hidden border-slate-100 rounded-[2rem] shadow-sm">
